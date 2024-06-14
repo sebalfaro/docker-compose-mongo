@@ -1,0 +1,11 @@
+services:
+  db:
+    container_name: pokemon_db
+    image: mongo:6.0
+    volumes:
+      - ./db_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    # Recomended on multi-containers apps
+    restart: always

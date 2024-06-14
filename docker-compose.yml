@@ -1,12 +1,13 @@
 services:
   db:
-    container_name: pokemon_db
+    container_name: ${MONGO_DB_NAME}
     image: mongo:6.0
     volumes:
       - ./db_data:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     # Recomended on multi-containers apps
     restart: always
-    # Volumes?
+    # Commands
+    command: ['--auth']

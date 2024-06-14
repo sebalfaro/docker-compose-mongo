@@ -9,4 +9,3 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
     # Recomended on multi-containers apps
     restart: always
-    # Volumes?
